@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+      crossorigin="anonymous">
+
+
+<title>Employee Web Application</title>
+
+<style>
+body {
+	padding-top: 50px;
+}
+
+.special {
+	padding-top: 50px;
+}
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/home">Employee Management System</a>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="container p-3 my-3 special">
+
+		<h2 class="h2">Update of an employee</h2>
+		<div>
+			<form method="post"
+				th:action="@{/saveEmployee}" th:object="${employee}">
+				<div class="form-group">
+					<input
+						type="hidden" th:field="*{id}" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="firstNameInput">First Name</label> 
+					<input
+						type="text" th:field="*{firstName}" class="form-control" id="firstNameInput"
+						aria-describedby="firstNameHelp" placeholder="Saisir le prénom"> <small
+						id="firstNameHelp" class="form-text text-muted">please write the employee's first name.</small>
+				</div>
+				<div class="form-group">
+					<label for="lastNameInput">Last Name</label> 
+					<input
+						type="text" th:field="*{lastName}" class="form-control" id="lastNameInput"
+						aria-describedby="lastNameHelp" placeholder="Saisir le prénom"> <small
+						id="lastNameHelp" class="form-text text-muted">please write the employee's last name.</small>
+				</div>
+				<div class="form-group">
+					<label for="mailInput">Email</label> 
+					<input
+						type="text" th:field="*{mail}" class="form-control" id="mailInput"
+						aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+						id="mailHelp" class="form-text text-muted">please write the employee's Email.</small>
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Edit Employee</button>
+			</form>
+		</div>
+
+	</div>
+	
+	<div class="alert alert-info fixed-bottom" align="center" role="alert" >Copyright © all right reserved Sayeh </div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+            crossorigin="anonymous"></script>
+</body>
+</html>
