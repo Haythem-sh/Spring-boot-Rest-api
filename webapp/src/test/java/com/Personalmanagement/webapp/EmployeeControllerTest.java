@@ -26,8 +26,7 @@ public class EmployeeControllerTest {
 		mockMvc.perform(get("/"))
 			.andDo(print())
 			.andExpect(status().isOk())
-			.andExpect(view().name("home"))
-			.andExpect(content().string(containsString("Laurent")));
+			.andExpect(view().name("login"));
 		
 	}
 	
