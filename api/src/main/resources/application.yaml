@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: api
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+
+server:
+  port: 9000
+
+logging:
+  level:
+    root: error
+    com.Personalmanagement: info
+    org.springframework.boot.autoconfigure.h2: INFO
+    org.springframework.boot.web.embedded.tomcat: INFO
+
